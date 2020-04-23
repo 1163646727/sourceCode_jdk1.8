@@ -109,13 +109,16 @@ public final class Optional<T> {
     }
 
     /**
-     * Returns an {@code Optional} describing the specified value, if non-null,
-     * otherwise returns an empty {@code Optional}.
-     *
-     * @param <T> the class of the value
-     * @param value the possibly-null value to describe
-     * @return an {@code Optional} with a present value if the specified value
-     * is non-null, otherwise an empty {@code Optional}
+     * methodName: ofNullable <BR>
+     * description: 是否是空值<BR>
+     * remark:
+     * 如果是非空，返回指定的值<BR>
+     * 否则返回一个空实体empty()<BR>
+     * param: value ,入参的类，入参可以是空<BR>
+     * return: java.util.Optional<T> <BR>
+     *     如果入参指定了值，返回当前的值，否则返回返回一个空实体empty
+     * author: ChenQi <BR>
+     * createDate: 2020-04-22 10:31 <BR>
      */
     public static <T> Optional<T> ofNullable(T value) {
         return value == null ? empty() : of(value);
