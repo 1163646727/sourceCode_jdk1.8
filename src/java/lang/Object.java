@@ -1,40 +1,17 @@
-/*
- * Copyright (c) 1994, 2012, Oracle and/or its affiliates. All rights reserved.
- * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */
-
 package java.lang;
 
 /**
- * Class {@code Object} is the root of the class hierarchy.
- * Every class has {@code Object} as a superclass. All objects,
- * including arrays, implement the methods of this class.
- *
- * @author  unascribed
- * @see     java.lang.Class
- * @since   JDK1.0
+ * className: Object <BR>
+ * description: <BR>
+ * remark: <BR>
+ * Object 是类层次结构的根。Java体系里面的每个类默认都有一个超类就是 Object。总之，所有对象,包含数组，都默认实现该类的方法。<BR>
+ * author: ChenQi <BR>
+ * createDate: 2020-04-24 10:42 <BR>
  */
 public class Object {
+
+    /** native 关键字是 JNI（Java Native Interface）的重要体现。什么是 JNI ,JNI 是Java调用其他语言（c，c++） 的一种机制。<BR>
+     * native 关键字修饰的是方法，起声明作用，告诉 JVM 老哥自己去调用这个方法。 这个方法的实现在别的语言那已经实现，我们是看不到源码的。  ChenQi*/
 
     private static native void registerNatives();
     static {
@@ -60,8 +37,17 @@ public class Object {
      *         class of this object.
      * @jls 15.8.2 Class Literals
      */
+    /**
+     * methodName: getClass <BR>
+     * description: <BR>
+     * remark: getClass()方法被native修饰，告诉JVM自己去调用，可以被重写，同时被final修饰，所以不能被子类重写； <BR>
+     * 返回正在运行的类返回的对象是被locked的，<BR>
+     * param:  <BR>
+     * return: java.lang.Class<?> <BR>
+     * author: ChenQi <BR>
+     * createDate: 2020-04-24 11:08 <BR>
+     */
     public final native Class<?> getClass();
-
     /**
      * Returns a hash code value for the object. This method is
      * supported for the benefit of hash tables such as those provided by
