@@ -16,28 +16,29 @@ public class Object {
 
     private static native void registerNatives();
     static {
-        registerNatives();
+        System.out.println("调用了Object类的静态代码块....");
+        registerNatives();    /**
+         * Returns the runtime class of this {@code Object}. The returned
+         * {@code Class} object is the object that is locked by {@code
+         * static synchronized} methods of the represented class.
+         *
+         * <p><b>The actual result type is {@code Class<? extends |X|>}
+         * where {@code |X|} is the erasure of the static type of the
+         * expression on which {@code getClass} is called.</b> For
+         * example, no cast is required in this code fragment:</p>
+         *
+         * <p>
+         * {@code Number n = 0;                             }<br>
+         * {@code Class<? extends Number> c = n.getClass(); }
+         * </p>
+         *
+         * @return The {@code Class} object that represents the runtime
+         *         class of this object.
+         * @jls 15.8.2 Class Literals
+         */
     }
 
-    /**
-     * Returns the runtime class of this {@code Object}. The returned
-     * {@code Class} object is the object that is locked by {@code
-     * static synchronized} methods of the represented class.
-     *
-     * <p><b>The actual result type is {@code Class<? extends |X|>}
-     * where {@code |X|} is the erasure of the static type of the
-     * expression on which {@code getClass} is called.</b> For
-     * example, no cast is required in this code fragment:</p>
-     *
-     * <p>
-     * {@code Number n = 0;                             }<br>
-     * {@code Class<? extends Number> c = n.getClass(); }
-     * </p>
-     *
-     * @return The {@code Class} object that represents the runtime
-     *         class of this object.
-     * @jls 15.8.2 Class Literals
-     */
+
     /**
      * methodName: getClass <BR>
      * description: <BR>
@@ -90,6 +91,7 @@ public class Object {
      * remark: 主要是返回对象的hashcode，主要是为了一些哈希表的数据结构服务的，比如 HashMap 。<BR>
      * 在 Java 中hancode 与 对象是否相等密切相关。 如果两个对象相等，则 hashcode 一定相等，但是 hashcode 相等，两个对象不一定相等。<BR>
      * 如果 hashcode 不相等，那么这两个对象一定不相等,比如a与97。<BR>
+     * Object类提供的默认实现确实保证每个对象的hash码不同（在对象的内存地址基础上经过特定算法返回一个hash码）。<BR>
      * param:  <BR>
      * return: int <BR>
      * author: ChenQi <BR>
@@ -156,6 +158,7 @@ public class Object {
      * createDate: 2020-04-27 09:04 <BR>
      */
     public boolean equals(Object obj) {
+        System.out.println("调用Object的equals方法；this:"+this.toString()+",obj:"+obj.toString());
         return (this == obj);
     }
 
