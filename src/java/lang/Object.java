@@ -11,7 +11,8 @@ package java.lang;
 public class Object {
 
     /** native 关键字是 JNI（Java Native Interface）的重要体现。什么是 JNI ,JNI 是Java调用其他语言（c，c++） 的一种机制。<BR>
-     * native 关键字修饰的是方法，起声明作用，告诉 JVM 老哥自己去调用这个方法。 这个方法的实现在别的语言那已经实现，我们是看不到源码的。  ChenQi*/
+     * native 关键字修饰的是方法，起声明作用，告诉 JVM 老哥自己去调用这个方法。
+     * 这个方法的实现在别的语言那已经实现，我们是看不到源码的。  ChenQi*/
 
     private static native void registerNatives();
     static {
@@ -40,7 +41,7 @@ public class Object {
     /**
      * methodName: getClass <BR>
      * description: <BR>
-     * remark: getClass()方法被native修饰，告诉JVM自己去调用，可以被重写，同时被final修饰，所以不能被子类重写； <BR>
+     * remark: getClass()方法被native修饰，告诉JVM自己去调用，同时被final修饰，所以不能被子类重写； <BR>
      * 返回正在运行的类返回的对象是被locked的，<BR>
      * param:  <BR>
      * return: java.lang.Class<?> <BR>
@@ -82,6 +83,17 @@ public class Object {
      * @return  a hash code value for this object.
      * @see     java.lang.Object#equals(java.lang.Object)
      * @see     java.lang.System#identityHashCode
+     */
+    /**
+     * methodName: hashCode <BR>
+     * description: <BR>
+     * remark: 主要是返回对象的hashcode，主要是为了一些哈希表的数据结构服务的，比如 HashMap 。<BR>
+     * 在 Java 中hancode 与 对象是否相等密切相关。 如果两个对象相等，则 hashcode 一定相等，但是 hashcode 相等，两个对象不一定相等。<BR>
+     * 如果 hashcode 不相等，那么这两个对象一定不相等,比如a与97。<BR>
+     * param:  <BR>
+     * return: int <BR>
+     * author: ChenQi <BR>
+     * createDate: 2020-04-27 08:58 <BR>
      */
     public native int hashCode();
 
@@ -130,6 +142,18 @@ public class Object {
      *          argument; {@code false} otherwise.
      * @see     #hashCode()
      * @see     java.util.HashMap
+     */
+    /**
+     * methodName: equals <BR>
+     * description: <BR>
+     * remark: 该方法可以被重写，主要用来判断两个对象是否相等。<BR>
+     * Object#equals(Object obj)方法，比较的是内存地址，通常实际应用中我们想比较的是两个对象里面的属性内容是否相等，所以会重写该方法。<BR>
+     * 这里要注意重写 equals(Object obj) 的时候，也要重写 hashCode() 方法。 <BR>
+     * 因为 Java 规定：如果两个对象相等，那么他们的 hashcode 也要相等。<BR>
+     * param: obj <BR>
+     * return: boolean <BR>
+     * author: ChenQi <BR>
+     * createDate: 2020-04-27 09:04 <BR>
      */
     public boolean equals(Object obj) {
         return (this == obj);
