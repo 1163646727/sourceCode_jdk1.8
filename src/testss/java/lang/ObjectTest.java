@@ -2,6 +2,7 @@ package testss.java.lang;
 
 import org.junit.Test;
 import testss.com.pri.entity.Student;
+import testss.com.pri.entity.ZhanSan;
 
 /**
  * className: ObjectTest <BR>
@@ -51,5 +52,11 @@ public class ObjectTest {
 
         System.out.println("hash==hash2:"+ (hash==hash2));
 
+    }
+
+    @Test
+    public void cloneTest() throws  InterruptedException {
+        ZhanSan zhanSan = new ZhanSan();
+        zhanSan.setIdent("123456");
     }
 }

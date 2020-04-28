@@ -222,6 +222,15 @@ public class Object {
      *               be cloned.
      * @see java.lang.Cloneable
      */
+    /**
+     * methodName: clone <BR>
+     * description: <BR>
+     * remark: 源码中，clone()的访问权限是protected，这里为了测试，改成public<BR>
+     * param:  <BR>
+     * return: java.lang.Object <BR>
+     * author: ChenQi <BR>
+     * createDate: 2020-04-28 10:37 <BR>
+     */
     protected native Object clone() throws CloneNotSupportedException;
 
     /**

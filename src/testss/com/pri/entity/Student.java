@@ -8,7 +8,7 @@ package testss.com.pri.entity;
  * date: 2020/4/27 9:33 <BR>
  * version 1.0 jdk1.8 <BR>
  */
-public class Student {
+public class Student{
     /** 姓名 ChenQi*/
     private String name;
 
@@ -58,5 +58,14 @@ public class Student {
     public int hashCode() {
         int result = Ident != null ? Ident.hashCode() : 0;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", Ident='" + Ident + '\'' +
+                '}';
     }
 }
