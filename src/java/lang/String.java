@@ -961,6 +961,15 @@ public final class String
      * @see  #compareTo(String)
      * @see  #equalsIgnoreCase(String)
      */
+    /**
+     * methodName: equals <BR>
+     * description:比较对象 <BR>
+     * remark: <BR>
+     * param: anObject <BR>
+     * return: boolean <BR>
+     * author: ChenQi <BR>
+     * createDate: 2020-05-20 19:26 <BR>
+     */
     public boolean equals(Object anObject) {
         if (this == anObject) {
             return true;
@@ -1088,6 +1097,15 @@ public final class String
      *          false} otherwise
      *
      * @see  #equals(Object)
+     */
+    /**
+     * methodName: equalsIgnoreCase <BR>
+     * description:忽略大小写比较字符串对象 <BR>
+     * remark: <BR>
+     * param: anotherString <BR>
+     * return: boolean <BR>
+     * author: ChenQi <BR>
+     * createDate: 2020-05-20 19:27 <BR>
      */
     public boolean equalsIgnoreCase(String anotherString) {
         return (this == anotherString) ? true
