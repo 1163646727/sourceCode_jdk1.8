@@ -26,4 +26,42 @@ public class PriTest {
     public void test(){
         System.out.println("test");
     }
+
+    /**
+     * methodName: yu <BR>
+     * description: 逻辑与测试<BR>
+     * remark: <BR>
+     * param:  <BR>
+     * return: void <BR>
+     * author: ChenQi <BR>
+     * createDate: 2020-05-26 16:48 <BR>
+     */
+    @Test
+    public void yu(){
+        boolean a = true;
+        boolean b = true;
+        boolean c = (a = (1 == 2)) && ((b = (1 == 2)));
+        System.out.println("a:"+a);
+        System.out.println("b:"+b);
+        System.out.println("c:"+c);
+    }
+
+    /**
+     * methodName: huo <BR>
+     * description: 逻辑或测试 <BR>
+     * remark: <BR>
+     * param:  <BR>
+     * return: void <BR>
+     * author: ChenQi <BR>
+     * createDate: 2020-05-26 16:52 <BR>
+     */
+    @Test
+    public void huo(){
+        boolean e = false;
+        boolean f = false;
+        boolean g = (e = (1 == 1)) || (f = (1 == 1));
+        System.out.println("e:"+e);
+        System.out.println("f:"+f);
+        System.out.println("g:"+g);
+    }
 }
